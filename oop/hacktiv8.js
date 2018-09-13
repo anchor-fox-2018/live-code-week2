@@ -35,8 +35,14 @@ class Hacktiv8 {
 }
 
 class Manager extends Hacktiv8{
-    constructor(salary){
-        super(id, name, age, address, gender)
+    constructor(obj){
+        super({
+            id: obj.id,
+            name: obj.name,
+            age: obj.age,
+            address: obj.address,
+            gender: obj.gender
+        })
         this._salary = salary
     }
 }
