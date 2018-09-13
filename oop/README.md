@@ -107,7 +107,7 @@ Buatlah sebuah perusahaan baru dengan data data sebagai berikut:
     - **gender** -> Male
     - **phase** -> 1
 
-## Release 2
+## Release 2.1
 
 Dalam sebuah perusahaan tersebut terdapat berbagai fitur yang bisa digunakan,
 fitur fitur tersebut adalah:

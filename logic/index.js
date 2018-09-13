@@ -11,11 +11,25 @@ function matriksMultiply(matriks1,matriks2){
         return "Jumlah kolom pada matriks pertama tidak sama dengan jumlah baris pada matriks ke dua."
     }
 
+
+    
     else {
         let result = [];
+        //matriks1 down
         for (let i = 0; i < matriks1.length; i++) {
-
+            let eachRow = [];
+            // each iteration
+            for (let c = 0; c < matriks2[0].length; c++) {
+                let tempResult = 0;
+                for (let n = 0; n < matriks1[i].length; n++) {
+                        tempResult += matriks1[i][n] * matriks2[n][c];
+                        console.log(`${matriks1[i][n]} x ${matriks2[i][c]} = ${matriks1[i][n] * matriks2[i][c]}`);
+                }
+                eachRow.push(tempResult);
+            }
+            result.push(eachRow);
         }
+        return result;
     }
 }
 
@@ -36,22 +50,7 @@ let matriks2 = [
     [2,1]
 ]
 
-console.log(matriksMultiply(matriks1,matriks2));
-
-/*
-   [
-    [(1*6)+(2*3)+(3*2), (1*5)+(2*4)+(3*1)], 
-    [(4*6)+(5*3)+(6*2), (4*5)+(5*4)+(6*1)],
-    [(7*6)+(8*3)+(9*2), (7*5)+(8*4)+(9*1)]
-   ]
-
-   [
-    [18,16],
-    [51,46],
-    [84,76]
-   ]
-*/
-
+// console.log(matriksMultiply(matriks1,matriks2));
 
 /* 
     testcase 2
@@ -96,7 +95,7 @@ let matriks6 = [
     
 ]
 
-// console.log(matriksMultiply(matriks5,matriks6))
+console.log(matriksMultiply(matriks5,matriks6))
 
 /* 
    [ 
