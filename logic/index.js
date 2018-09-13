@@ -5,6 +5,18 @@
 
 function matriksMultiply(matriks1,matriks2){
     // your code here 
+
+    //error handling
+    if (matriks1.length !== matriks2[0].length) {
+        return "Jumlah kolom pada matriks pertama tidak sama dengan jumlah baris pada matriks ke dua."
+    }
+
+    else {
+        let result = [];
+        for (let i = 0; i < matriks1.length; i++) {
+
+        }
+    }
 }
 
 /* 
@@ -24,7 +36,7 @@ let matriks2 = [
     [2,1]
 ]
 
-console.log(matriks1,matriks2)
+console.log(matriksMultiply(matriks1,matriks2));
 
 /*
    [
@@ -84,7 +96,7 @@ let matriks6 = [
     
 ]
 
-console.log(matriksMultiply(matriks5,matriks6))
+// console.log(matriksMultiply(matriks5,matriks6))
 
 /* 
    [ 
