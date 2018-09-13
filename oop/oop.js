@@ -66,15 +66,39 @@ class Company {
             console.log(`You don't have a salary yet`);
         }
     }
+    addUser(user) {
+        let validRights = false;
+        for (let i = 0; i < this._loggedInUser.length; i++) {
+            for (let j = 0; j < this._people.length; j++) {
+                if (this._people[j].name === this._loggedInUser[i]) {
+                    if (this._people[j].accessRight === "Manager") {
+                        validRights = true;
+                    }
+                }
+            }
+        }
+        if (validRights) {
+            if (this._limit <= 10) {
+                this._people.push(user);
+                console.log(`kamu sukses menambahkan ${name} ke daftar`);
+            }
+            else {
+                console.log(`Perusahaan terlalu besar, limit adalah ${this._limit}`);
+            }
+        }
+    }
+    showPeople() {
+
+    }
 }
 
 class PeopleInHacktiv8 {
     constructor(id, name, age, address, gender) {
-        this._id = id || 0;
-        this._name = name || "noname";
-        this._age = age || 0;
-        this._address = address || "";
-        this._gender = gender || "";
+        this._id = id || this._id + 1;
+        this._name = name;
+        this._age = age;
+        this._address = address;
+        this._gender = gender;
     }
     greet() {
         console.log(`Halo! Saya salah satu member Hacktiv8!`);
@@ -140,3 +164,5 @@ student.registerToCompany();
 hacktiv8.login("John Kosasih");
 //hacktiv8.showSalaries();
 hacktiv8.mySalary();
+hacktiv8.addUser(new Instructor(5, "Wika Silo", 20, "Pondok Indah", "Male", 10000000));
+console.log(hacktiv8._people);
