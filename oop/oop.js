@@ -42,6 +42,30 @@ class Company {
             console.log(`You don't have permission to access this feature!`);
         }
     }
+    mySalary() {
+        let validRights = false;
+        for (let i = 0; i < this._loggedInUser.length; i++) {
+            for (let j = 0; j < this._people.length; j++) {
+                if (this._people[j].name === this._loggedInUser[i]) {
+                    if (this._people[j].accessRight === "Manager" || this._people[j].accessRight === "Instructor") {
+                        validRights = true;
+                    }
+                }
+            }
+        }
+        if (validRights) {
+            for (let i = 0; i < this._people.length; i++) {
+                for (let j = 0; j < this._loggedInUser.length; j++) {
+                    if (this._loggedInUser[j] === this._people[i].name) {
+                        console.log(`Your salary is ${this._people[i].salary}`);
+                    }
+                }
+            }
+        }
+        else {
+            console.log(`You don't have a salary yet`);
+        }
+    }
 }
 
 class PeopleInHacktiv8 {
@@ -114,4 +138,5 @@ instructor2.registerToCompany();
 student.registerToCompany();
 //hacktiv8.login("Marry Kosasih");
 hacktiv8.login("John Kosasih");
-hacktiv8.showSalaries();
+//hacktiv8.showSalaries();
+hacktiv8.mySalary();
