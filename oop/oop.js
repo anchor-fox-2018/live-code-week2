@@ -1,43 +1,29 @@
-
 class PeopleInHacktiv8 {
+    constructor() {
+        this._id = id;
+        this._name = name;
+        this._age = age;
+        this._address = address;
+        this._gender = gender;
+    }
+}
+class Manager extends PeopleInHacktiv8 {
+    constructor() {
+        super();
+        this._salary = salary;
+    }
 
 }
-class Manager {
+class Instructor extends PeopleInHacktiv8 {
     constructor() {
-        this._id = id;
-        this._name = name;
-        this._age = age;
-        this._address = address;
-        this._gender = gender;
+        super();
         this._salary = salary;
     }
-    greet() {
-        return `Halo! Saya salah satu member Hacktiv8!`;
-    }
 }
-class Instructor {
+class Student extends PeopleInHacktiv8 {
     constructor() {
-        this._id = id;
-        this._name = name;
-        this._age = age;
-        this._address = address;
-        this._gender = gender;
-        this._salary = salary;
-    }
-    greet() {
-        return `Halo! Saya salah satu member Hacktiv8!`;
-    }
-}
-class Student {
-    constructor() {
-        this._id = id;
-        this._name = name;
-        this._age = age;
-        this._address = address;
-        this._gender = gender;
+        super();
         this._phase = phase;
     }
-    greet() {
-        return `Halo! Saya salah satu member Hacktiv8!`;
-    }
+
 }
