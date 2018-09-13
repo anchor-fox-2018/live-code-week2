@@ -4,7 +4,29 @@
 */
 
 function matriksMultiply(matriks1,matriks2){
-    // your code here 
+    let urut1 = [];
+    let urut2 = [];
+    let urut = [];
+    urut.push(urut1);
+    urut.push(urut2);
+    for(let i = 0;i < matriks2.length;i++){
+        urut1.push(matriks2[i][0]);
+        urut2.push(matriks2[i][1]);
+        
+    }
+    let hasil = [];
+    for(let i = 0;i < matriks1.length;i++){
+        let isi = [0,0]
+        for(let j = 0;j < 2;j++){
+            for(let k = 0;k < urut[0].length;k++){
+                isi[j]+= urut[j][k]*matriks1[i][k]
+                //console.log( urut[j][k],'==matriks1==>',matriks1[i][k])
+            }
+        }
+        hasil.push(isi)
+    }
+    return hasil
+
 }
 
 /* 
@@ -24,7 +46,7 @@ let matriks2 = [
     [2,1]
 ]
 
-console.log(matriks1,matriks2)
+console.log(matriksMultiply(matriks1,matriks2))
 
 /*
    [
