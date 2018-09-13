@@ -42,7 +42,8 @@ function matriksMultiply(matriks1,matriks2){
                     for(let l = 0; l < matriks2.length; l++){
                         let elemen = 0;
                         for(let m = 0; m < matriks2[l].length; m++){
-                            elemen += matriks1[k][l] * matriks2[l][k]
+                            console.log(m);
+                            // elemen += matriks1[k][m] * matriks2[m][k]
                         }
                         col.push(elemen)
                     }
@@ -51,7 +52,7 @@ function matriksMultiply(matriks1,matriks2){
             result.push(col)
         }
 
-        
+        return result;
     }
 }
 
@@ -71,7 +72,7 @@ let matriks2 = [
     [3,4],
     [2,1]
 ]
-console.log(canMultiply(matriks1, matriks2));
+// console.log(canMultiply(matriks1, matriks2));
 
 console.log(matriks1,matriks2)
 
