@@ -28,9 +28,15 @@ class Hacktiv8 {
         this._managers.push(manager)
     }
 
-    addStudent(student){
-        let abduh = new Student;
-        this.phase = student.phase;
+    greet(position){
+        console.log(`Halo! Saya salah satu member Hacktiv8!`)
+        if(position.salary !== undefined){
+            console.log('Saya adalah seorang manager!')
+        } else if(position.phase !== undefined){
+            console.log('Saya sedang belajar programming di sini!')
+        } else {
+            console.log('Saya adalah seorang instruktur!')
+        }
     }
 }
 
@@ -45,11 +51,13 @@ class Manager extends Hacktiv8{
         })
         this._salary = salary
     }
+    get salary(){
+        return this._salary
+    }
 }
 
-class Instructor{
-    constructor(){
-    }
+class Instructor extends Hacktiv8{
+    
 }
 
 class Student extends Hacktiv8 {
@@ -63,14 +71,25 @@ class Student extends Hacktiv8 {
         })
         this._phase = obj.phase
     }
+
+    get phase(){
+        return this._phase
+    }
 }
 
 // var abduh = new Student({id: 1, name: 'Abduh', age: 25, address: 'Bandung', gender: 'male', phase:'anchorFox'})
 var abduh = new Student({id: 1, name: 'Abduh', age: 25, address: 'Bandung', gender: 'male', phase : 'anchorFox'})
+// var icha = new Manager({})
+var hacktiv = new Hacktiv8(abduh)
+var wika = new Instructor({id: 1, name: 'Wika', age: 25, address: 'Bekasi', gender: 'male'})
+console.log(hacktiv);
+console.log(wika);
 console.log(abduh)
+hacktiv.greet(abduh)
+hacktiv.greet(wika)
 // var hacktiv = new Hacktiv8(abduh)
 // console.log(hacktiv)
 
-// var abduhStudents =  new Student({id: 1, name: 'Abduh', age: 25, address: 'Bandung', gender: 'male', phase: 'anchorFox'})
+// var abduhStudents =  new Student({id: 1, naSaya adalah seorang manager!me: 'Abduh', age: 25, address: 'Bandung', gender: 'male', phase: 'anchorFox'})
 // console.log(abduhStudent)
 // var abduhStudent = new Student()
